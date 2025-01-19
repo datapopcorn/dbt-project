@@ -42,3 +42,8 @@ models:
       +materialized: view
     test_schema:
       +materialized: view
+  github_data:
+    source:
+      +materialized: view
+    staging:
+      +materialized: view 
