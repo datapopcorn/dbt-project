@@ -1,0 +1,7 @@
+sources:
+  - name: github_data
+    database: "cloud-385312"
+    schema: "github_data"
+    tables:
+      - name: issues
+      - name: issues__comments
