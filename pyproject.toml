@@ -9,4 +9,5 @@ dependencies = [
     "dbt-core<=1.8.9",
     "dlt>=1.5.0",
     "logbook",
+    "streamlit>=1.41.1",
 ]
