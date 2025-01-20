@@ -3,7 +3,7 @@ import dlt
 from github import github_reactions, github_repo_events, github_stargazers
 
 
-def load_dbt_project_reactions_issues_only() -> None:
+def load_dbt_project_issues_only() -> None:
     """Loads issues, their comments and reactions for dbt-project"""
     pipeline = dlt.pipeline(
         "github_reactions",
@@ -72,7 +72,7 @@ def load_dlthub_dlt_stargazers() -> None:
 
 
 if __name__ == "__main__":
-    load_dbt_project_reactions_issues_only()
+    load_dbt_project_issues_only()
     #load_airflow_events()
     #load_dlthub_dlt_all_data()
     #load_dlthub_dlt_stargazers()
