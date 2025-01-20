@@ -6,7 +6,8 @@ with comments as (
         comment_body,
         comment_author,
         comment_author_association,
-        comment_created_at
+        comment_created_at,
+        reactions_total_count
      from {{ ref('stg_github_issues_comments') }}
 )
 

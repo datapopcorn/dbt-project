@@ -8,5 +8,5 @@ select
     author__login as comment_author,
     author_association as comment_author_association,
     created_at as comment_created_at,
+    reactions_total_count
 from source
-
