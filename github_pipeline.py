@@ -17,6 +17,23 @@ def load_dbt_project_reactions_issues_only() -> None:
     ).with_resources("issues")
     print(pipeline.run(data))
 
+    pipeline = dlt.pipeline(
+        "github_reactions",
+        destination='bigquery',
+        dataset_name="github_data_dbt",
+    )
+    # add dbt runner
+    dbt = dlt.dbt.package(pipeline, package_location="./dbt_project")
+
+    models = dbt.run(cmd_params=["-s +dim_issues_comments_reactions +fct_issues +fct_comments"])
+    # On success, print the outcome
+    for m in models:
+        print(
+            f"Model {m.model_name} materialized" +
+            f" in {m.time}" +
+            f" with status {m.status}" +
+            f" and message {m.message}"
+        )
 
 def load_airflow_events() -> None:
     """Loads airflow events. Shows incremental loading. Forces anonymous access token"""

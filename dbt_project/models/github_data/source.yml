@@ -5,3 +5,5 @@ sources:
     tables:
       - name: issues
       - name: issues__comments
+      - name: issues__comments__reactions
+      - name: issues__reactions
